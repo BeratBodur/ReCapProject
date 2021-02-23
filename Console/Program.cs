@@ -3,20 +3,34 @@ using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
 using System;
 
-namespace Console
+namespace ConsoleUI
 {
     class Program
     {
         static void Main(string[] args)
         {
+            CarTest();
+            BrandTest();
+
+        }
+
+        private static void BrandTest()
+        {
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            foreach (var brand in brandManager.GetAll())
+            {
+                Console.WriteLine(brand.BrandName);
+            }
+        }
+
+        private static void CarTest()
+        {
             CarManager carManager = new CarManager(new EfCarDal());
 
-            foreach (var car in carManager.GetAll())
+            foreach (var car in carManager.GetCarDetails())
             {
-                System.Console.WriteLine(car.Id);
+                Console.WriteLine(car.CarName + "/" + car.BrandName + "/" + car.ColorName + "/" + car.DailyPrice);
             }
-
-
         }
     }
 }

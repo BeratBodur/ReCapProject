@@ -1482,10 +1482,24 @@
           "bin/placeholder/Business.dll": {}
         }
       },
+      "Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.11"
+        },
+        "compile": {
+          "bin/placeholder/Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.dll": {}
+        }
+      },
       "DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Core": "1.0.0",
           "Entities": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.11"
         },
@@ -1499,6 +1513,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Core": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -5687,6 +5704,11 @@
       "path": "../Business/Business.csproj",
       "msbuildProject": "../Business/Business.csproj"
     },
+    "Core/1.0.0": {
+      "type": "project",
+      "path": "../Core/Core.csproj",
+      "msbuildProject": "../Core/Core.csproj"
+    },
     "DataAccess/1.0.0": {
       "type": "project",
       "path": "../DataAccess/DataAccess.csproj",
@@ -5711,9 +5733,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC\\source\\repos\\ReCapProject\\Console\\Console.csproj",
-      "projectName": "Console",
-      "projectPath": "C:\\Users\\PC\\source\\repos\\ReCapProject\\Console\\Console.csproj",
+      "projectUniqueName": "C:\\Users\\PC\\source\\repos\\ReCapProject\\Console\\ConsoleUI.csproj",
+      "projectName": "ConsoleUI",
+      "projectPath": "C:\\Users\\PC\\source\\repos\\ReCapProject\\Console\\ConsoleUI.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\PC\\source\\repos\\ReCapProject\\Console\\obj\\",
       "projectStyle": "PackageReference",
