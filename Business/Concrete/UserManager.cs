@@ -31,17 +31,17 @@ namespace Business.Concrete
             return new SuccessDataResult<List<User>>(_userDal.GetAll(), Messages.UsersListed);
         }
 
-        public IDataResult<List<User>> GetUsersById(int id)
+        public IDataResult<List<User>> GetById(int id)
         {
             return new SuccessDataResult<List<User>>(_userDal.GetAll(u => u.Id == id));
         }
 
-        public IDataResult<List<User>> GetUsersByUserFirstName(string FirstName)
+        public IDataResult<List<User>> GetByFirstName(string FirstName)
         {
             return new SuccessDataResult<List<User>>(_userDal.GetAll(ufn => ufn.FirstName == FirstName));
         }
 
-        public IDataResult<List<User>> GetUsersByUserLastName(string LastName)
+        public IDataResult<List<User>> GetByLastName(string LastName)
         {
             return new SuccessDataResult<List<User>>(_userDal.GetAll(ln => ln.LastName == LastName));
         }

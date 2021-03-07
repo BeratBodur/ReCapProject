@@ -14,8 +14,8 @@ namespace Business.Abstract
 
 
         IDataResult<List<User>> GetAll();
-        IDataResult<List<User>> GetUsersById(int id);
-        IDataResult<List<User>> GetUsersByUserFirstName(string FirstName);
-        IDataResult<List<User>> GetUsersByUserLastName(string LastName);
+        IDataResult<List<User>> GetById(int id);
+        IDataResult<List<User>> GetByFirstName(string FirstName);
+        IDataResult<List<User>> GetByLastName(string LastName);
     }
 }

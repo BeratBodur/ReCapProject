@@ -33,13 +33,13 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Color>>(_colorDal.GetAll(), Messages.ColorsListed);
         }
 
-        public IDataResult<List<Color>> GetColorsById(int id)
+        public IDataResult<List<Color>> GetById(int id)
         {
             return new SuccessDataResult<List<Color>>(_colorDal.GetAll(ci => ci.ColorId == id));
 
         }
 
-        public IDataResult<List<Color>> GetColorsByColorName(string ColorName)
+        public IDataResult<List<Color>> GetByColorName(string ColorName)
         {
             return new SuccessDataResult<List<Color>>(_colorDal.GetAll(cn => cn.ColorName == ColorName));
         }

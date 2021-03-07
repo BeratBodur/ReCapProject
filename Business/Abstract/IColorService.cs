@@ -13,7 +13,7 @@ namespace Business.Abstract
         IResult Update(Color color);
 
         IDataResult<List<Color>> GetAll();
-        IDataResult<List<Color>> GetColorsById(int colorId);
-        IDataResult<List<Color>> GetColorsByColorName(string colorName);
+        IDataResult<List<Color>> GetById(int colorId);
+        IDataResult<List<Color>> GetByColorName(string colorName);
     }
 }

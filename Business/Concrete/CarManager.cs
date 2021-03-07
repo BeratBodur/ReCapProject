@@ -24,12 +24,12 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(),Messages.CarsListed);
         }
 
-        public IDataResult<List<Car>> GetCarsByColorId(int id)
+        public IDataResult<List<Car>> GetByColorId(int id)
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(c=>c.ColorId==id));
         }
 
-        public IDataResult<List<Car>> GetCarsByBrandId(int id)
+        public IDataResult<List<Car>> GetByBrandId(int id)
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(c=>c.BrandId==id));
 

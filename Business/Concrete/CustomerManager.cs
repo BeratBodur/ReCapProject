@@ -39,14 +39,14 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(), Messages.CustomersListed);
         }
 
-        public IDataResult<List<Customer>> GetCustomersByCustomerCompanyName(string CompanyName)
+        public IDataResult<List<Customer>> GetByCompanyName(string CompanyName)
         {
             return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(cn => cn.CompanyName == CompanyName));
         }
 
-        public IDataResult<List<Customer>> GetCustomersByCustomerdId(int id)
+        public IDataResult<List<Customer>> GetById(int id)
         {
-            return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(cu => cu.UserId == id));
+            return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(cu => cu.Id == id));
         }
 
         public IResult Update(Customer customer)
