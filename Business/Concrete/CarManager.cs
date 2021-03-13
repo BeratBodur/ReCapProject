@@ -1,5 +1,8 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.Validation_Rules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
+using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -20,41 +23,34 @@ namespace Business.Concrete
 
         public IDataResult<List<Car>> GetAll()
         {
-           
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll(),Messages.CarsListed);
+
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(), Messages.CarsListed);
         }
 
         public IDataResult<List<Car>> GetByColorId(int id)
         {
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll(c=>c.ColorId==id));
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(c => c.ColorId == id));
         }
 
         public IDataResult<List<Car>> GetByBrandId(int id)
         {
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll(c=>c.BrandId==id));
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(c => c.BrandId == id));
 
         }
 
-   
+
 
         public IDataResult<List<Car>> GetByDailyPrice(decimal min, decimal max)
         {
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll(c=>c.DailyPrice>=min && c.DailyPrice<=max),Messages.CarsListed);
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(c => c.DailyPrice >= min && c.DailyPrice <= max), Messages.CarsListed);
         }
 
+        [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
         {
-            if (car.Description.Length>=2 && car.DailyPrice>0)
-            {
-                _carDal.Add(car);
+            _carDal.Add(car);
+            return new SuccessResult(Messages.CarAdded);
 
-                return new SuccessResult(Messages.CarAdded);
-            }
-            else
-            { 
-                return new ErrorResult();
-            }
-            
         }
 
         public IResult Update(Car car)
@@ -63,8 +59,8 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CarUpdated);
         }
 
-        public IResult  Delete(Car car)
-        { 
+        public IResult Delete(Car car)
+        {
             return new SuccessResult(Messages.CarDeleted);
         }
 
@@ -73,6 +69,6 @@ namespace Business.Concrete
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails());
         }
 
-      
+
     }
 }

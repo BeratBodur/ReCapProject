@@ -60,3 +60,8 @@ C:\Users\PC\source\repos\ReCapProject\Console\obj\Debug\netcoreapp3.1\ConsoleUI.
 C:\Users\PC\source\repos\ReCapProject\Console\obj\Debug\netcoreapp3.1\ConsoleUI.dll
 C:\Users\PC\source\repos\ReCapProject\Console\obj\Debug\netcoreapp3.1\ConsoleUI.pdb
 C:\Users\PC\source\repos\ReCapProject\Console\obj\Debug\netcoreapp3.1\ConsoleUI.genruntimeconfig.cache
+C:\Users\PC\source\repos\ReCapProject\Console\bin\Debug\netcoreapp3.1\Autofac.dll
+C:\Users\PC\source\repos\ReCapProject\Console\bin\Debug\netcoreapp3.1\Autofac.Extras.DynamicProxy.dll
+C:\Users\PC\source\repos\ReCapProject\Console\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\PC\source\repos\ReCapProject\Console\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Users\PC\source\repos\ReCapProject\Console\bin\Debug\netcoreapp3.1\Autofac.Extensions.DependencyInjection.dll
